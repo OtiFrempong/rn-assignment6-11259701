@@ -1,12 +1,16 @@
-
+// HomeScreen.js
 import React, { useState, useEffect } from 'react';
-import { View, Text, Button, FlatList, StyleSheet, Image } from 'react-native';
+import { View, Text, Button, FlatList, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const products = [
-  { id: '1', name: 'Reversible Angora Cardigan', additionalName: 'Office Wear', price: 120, image: require('assets/dress1.png')},
-  { id: '2', name:'Recycle Boucle Knit Cardigan Pink' , additionalName: 'Black', price: 120, image: require('assets/dress2.png') },
-  // Add more products as needed
+  { id: '1', name: 'Reversible Angora Cardigan', additionalName: 'Office Wear', price: 120, image: require('../assets/dress1.png')},
+  { id: '2', name:'Recycle Boucle Knit Cardigan Pink' , additionalName: 'Black', price: 120, image: '../assets/dress2.png' },
+  { id: '3', name: 'Reversible Angora Cardigan', additionalName: 'Office Wear', price: 120, image: require('../assets/dress3.png')},
+  { id: '4', name: 'Reversible Angora Cardigan', additionalName: 'Office Wear', price: 120, image: require('../assets/dress4.png')},
+  { id: '5', name: 'Reversible Angora Cardigan', additionalName: 'Office Wear', price: 120, image: require('../assets/dress5.png')},
+  { id: '6', name: 'Reversible Angora Cardigan', additionalName: 'Office Wear', price: 120, image: require('../assets/dress6.png')},
+  { id: '7', name: 'Reversible Angora Cardigan', additionalName: 'Office Wear', price: 120, image: require('../assets/dress7.png')},
 ];
 
 const HomeScreen = ({ navigation }) => {
@@ -41,11 +45,15 @@ const HomeScreen = ({ navigation }) => {
           <Text style={styles.additionalName}>{item.additionalName}</Text>
             <Text style={styles.name}> {item.name}</Text>
             <Text>${item.price}</Text>
-            <Button title="Add to Cart" onPress={() => addToCart(item)} />
+            <TouchableOpacity onPress={() => addToCart(item)} style={styles.addButton}>
+              <Image source={require('../assets/add_circle.png')} style={styles.addButtonImage} />
+            </TouchableOpacity>
           </View>
         )}
       />
-      <Button title="Go to Cart" onPress={() => navigation.navigate('Cart')} />
+      <TouchableOpacity onPress={() => navigation.navigate('Cart')} style={styles.cartButton}>
+        <Text style={styles.cartButtonText}>Go to Cart</Text>
+      </TouchableOpacity>
     </View>
   );
 };
@@ -60,9 +68,6 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginBottom: 20,
   },
-  name: {
-fontWeight: 'bold',
-  },
   product: {
     marginVertical: 10,
     padding: 10,
@@ -76,7 +81,27 @@ fontWeight: 'bold',
     marginBottom: 10
   },
   additionalName: {
+  fontWeight: 'bold',
     marginBottom: 5,
+  },
+  addButton: {
+    marginTop: 10,
+    alignItems: 'center',
+  },
+  addButtonImage: {
+    width: 30,
+    height: 30,
+  },
+  cartButton: {
+    marginTop: 20,
+    padding: 10,
+    backgroundColor: '#007BFF',
+    alignItems: 'center',
+    borderRadius: 5,
+  },
+  cartButtonText: {
+    color: '#fff',
+    fontSize: 16,
   },
 });
 
