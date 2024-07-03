@@ -4,8 +4,8 @@ import { View, Text, Button, FlatList, StyleSheet, Image } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const products = [
-  { id: '1', name: 'Reversible Angora Cardigan', additionalName: 'Office Wear', price: 120, image: require()},
-  { id: '2', name:'Recycle Boucle Knit Cardigan Pink' , additionalName: 'Black', price: 120, image: './assets/dress2.png' },
+  { id: '1', name: 'Reversible Angora Cardigan', additionalName: 'Office Wear', price: 120, image: require('assets/dress1.png')},
+  { id: '2', name:'Recycle Boucle Knit Cardigan Pink' , additionalName: 'Black', price: 120, image: require('assets/dress2.png') },
   // Add more products as needed
 ];
 
