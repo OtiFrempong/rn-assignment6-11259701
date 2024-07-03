@@ -8,11 +8,11 @@ const Header = () => {
   return (
     <View style={styles.container}>
       <TouchableOpacity onPress={() => navigation.openDrawer()}>
-        <Image source={require('../assets/images/Menu.png')} style={styles.icon} />
+        <Image source={require('../assets/Menu.png')} style={styles.icon} />
       </TouchableOpacity>
-      <Image source={require('../assets/images/Logo.png')} style={styles.icon} />
-      <Image source={require('../assets/images/Search.png')} style={styles.icons} />
-      <Image source={require('../assets/images/shoppingBag.png')} style={styles.icon} />
+      <Image source={require('../assets/Logo.png')} style={styles.icon} />
+      <Image source={require('../assets/SearchB.png')} style={styles.icons} />
+      <Image source={require('../assets/shoppingBag.png')} style={styles.icon} />
     </View>
   );
 };

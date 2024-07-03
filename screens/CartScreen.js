@@ -53,7 +53,7 @@ const CartScreen = () => {
                   <Text style={styles.itemPrice}>{item.price}</Text>
                 </View>
                 <TouchableOpacity onPress={() => handleRemoveFromCart(item.id)}>
-                  <Image source={require('../assets/images/remove.png')} style={styles.removeIcon} />
+                  <Image source={require('../assets/remove.png')} style={styles.removeIcon} />
                 </TouchableOpacity>
               </View>
             )}
@@ -64,7 +64,7 @@ const CartScreen = () => {
               <Text style={styles.totalPrice}>${calculateTotal()}</Text>
             </View>
             <TouchableOpacity style={styles.checkoutButton}>
-              <Image source={require('../assets/images/shoppingBag.png')} style={[styles.checkoutIcon, { tintColor: '#fff' }]} />
+              <Image source={require('../assets/shoppingBag.png')} style={[styles.checkoutIcon, { tintColor: '#fff' }]} />
               <Text style={styles.checkoutText}>CHECKOUT</Text>
             </TouchableOpacity>
           </View>

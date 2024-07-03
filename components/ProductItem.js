@@ -7,7 +7,7 @@ const ProductItem = ({ product, onAddToCart }) => {
       <View style={styles.imageContainer}>
         <Image source={product.image} style={styles.image} />
         <TouchableOpacity onPress={() => onAddToCart(product)} style={styles.cartButton}>
-          <Image source={require('../assets/images/add_circle.png')} style={styles.addToCart} />
+          <Image source={require('../assets/add_circle.png')} style={styles.addToCart} />
         </TouchableOpacity>
       </View>
       <View style={styles.infoContainer}>
